@@ -4,7 +4,6 @@ var url = require('url');
 function renderHtml(path,response){
     fs.readFile(path, null, function(error, data){
         if(error){
-            response.writeHead(404);
             response.write('file not found');
         }else{
             response.write(data);
@@ -31,9 +30,11 @@ module.exports ={
         renderHtml('./contact.html', response);
         break;
         default:
-        renderHtml('./404');
+        // renderHtml('./404.html', response);
+        response.write('no page exists');
+        response.end();
     }
-    response.end();
+    
 }
 };
 
