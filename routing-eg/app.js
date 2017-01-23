@@ -1,4 +1,3 @@
-
 var fs = require('fs');
 var url = require('url');
 
@@ -16,7 +15,7 @@ function renderHtml(path,response){
 
 
 module.exports ={
-    e1: function io(request, response){
+    e1: function(request, response){
     response.writeHead(200,{'Content-Type':'text/html'});
 
     var path = url.parse(request.url).pathname;
