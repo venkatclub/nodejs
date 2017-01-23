@@ -12,4 +12,7 @@ function io(request,response){
         response.end();
     });
 }
-http.createServer(io).listen(8080);
+// http.createServer(io).listen(8080);
+
+var hi =  http.createServer(io);
+hi.listen(8080);
